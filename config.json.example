@@ -1,0 +1,31 @@
+{
+    "//": "e-mail settings",
+    "mail": {
+        "//": "sender",
+        "from": "me@example.org",
+
+        "//": "receiver (multiple receivers can be specified via 'foo1@bar, foo2@baz')",
+        "to": "other-or-same-me@example.org",
+
+        "//": "smtp (outgoing) server settings",
+        "smtp": {
+            "//": "server hostname",
+            "server": "smtp.example.org",
+
+            "//": "server port (specify 0 to use the default port)",
+            "port": 0,
+
+            "//": "user name for login",
+            "user": "me",
+
+            "//": "user password for login",
+            "password": "soopah-doopah-seek-grit",
+
+            "//": "connection security. true: use SSL/TLS, false: use STARTTLS (not recommended)",
+            "tls": true,
+
+            "//": "timeout during connect in seconds (specify 0 to use the default timeout)",
+            "timeout": 5
+        }
+    }
+}
