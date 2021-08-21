@@ -9,7 +9,7 @@ The mail body can be either read from a file or via stdin.
 It supports multiple attachments.
 
 ## Configuration
-Copy `config.json.example` to `config.json` and open it for editing.
+Copy `sendMailConfig.json.example` to `sendMailConfig.json` and open it for editing.
 In section `mail` enter the sender and receiver for the mail header.
 In section `smtp` specify your SMTP server for outgoing mail transfer as well as your login credentials.
 
@@ -18,19 +18,21 @@ pySendMail supports the following command line options:
 
 - `-h, --help`: show this help message and exit
 - `-s SUBJECT, --subject`: SUBJECT mail subject
+- `-c CONTENT, --content`: mail content from string
 - `-f FILE, --file FILE`: mail content from file, specify `-` to read from stdin
 - `-a ATTACH, --attach ATTACH`: attachment(s), can be specified multiple times
 - `-r, --retry`: keep retrying until sending succeeds (except for failed logins)
 
 ## Examples
-Send a simple hello, with "hello" as subject and "hello from pySendMail" as mail body:
+Send a simple hello, with "hello" as subject and "hello from pySendMail" as mail body (both versions are equivalent):
 ```
-echo "hello from pySendMail" | ./pySendMail -s "hello" -f-
+./sendMail.py -s "hello" -c "hello from pySendMail"
+echo "hello from pySendMail" | ./sendMail.py -s "hello" -f-
 ```
 
 Send multiple images:
 ```
-./pySendMail -s "cat pics" -a cat1.png -a cat2.jpg
+./sendMail.py -s "cat pics" -a cat1.png -a cat2.jpg
 ```
 
 # License
