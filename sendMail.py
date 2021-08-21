@@ -18,7 +18,8 @@ class pySendMail:
         self.retry = False
 
         try:
-            self.config = json.load(open('config.json', 'r'))
+            path = os.path.abspath(os.path.dirname(__file__))
+            self.config = json.load(open(path + '/sendMailConfig.json', 'r'))
         except Exception as e:
             print('Could not parse config file: %s' % e)
             sys.exit(1)
